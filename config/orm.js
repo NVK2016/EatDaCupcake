@@ -34,13 +34,13 @@ var orm = {
     updateOne: function(tableName, values, cb) {
         var queryString = "UPDATE ";
   
-        if(values.complete === "0") {
+        if(values.devoured === "0") {
            queryString += tableName;
-           queryString += " SET complete=" + true;
+           queryString += " SET devoured=" + true;
            queryString += " WHERE id=" + values.id;
         } else {
            queryString += tableName;
-           queryString += " SET complete=" + false;
+           queryString += " SET devoured=" + false;
            queryString += " WHERE id=" + values.id;
         }
         
