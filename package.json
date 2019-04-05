@@ -1,22 +1,23 @@
 {
-  "name": "SharkTank",
+  "name": "EatDaCupcake",
   "version": "1.0.0",
   "description": "Full stack website using Node.js Express &amp; MySQL database",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NVK2016/SharkTank.git"
+    "url": "git+https://github.com/NVK2016/EatDaCupcake.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NVK2016/SharkTank/issues"
+    "url": "https://github.com/NVK2016/EatDaCupcake/issues"
   },
-  "homepage": "https://github.com/NVK2016/SharkTank#readme",
+  "homepage": "https://github.com/NVK2016/EatDaCupcake#readme",
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
