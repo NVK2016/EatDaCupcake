@@ -8,7 +8,7 @@ $(function() {
       devoured: newState
     };
 
-    alert("JS Button CLick" + newState);
+    // alert("JS Button CLick" + newState);
     // Send the PUT request.
     $.ajax("/api/cupcakes/" + id, {
       type: "PUT",
@@ -31,7 +31,7 @@ $(function() {
       devoured: 0, //Set to false 
     };
 
-    alert("New Data : "+ newCupCake.cupcake_name + "| "+ newCupCake.devoured); 
+    // alert("New Data : "+ newCupCake.cupcake_name + "| "+ newCupCake.devoured); 
     // Send the POST request.
     $.ajax("/api/cupcakes", {
       type: "POST",

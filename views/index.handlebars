@@ -17,12 +17,12 @@
         {{!-- Cupcake not eaten --}}
         <div class="col-lg-6">
             <div class="card text-white bg-warning border-danger mb-3" >
-                <h2 class="text-danger text-center">Gobble Gooble till you wobble</h2>
+                <h2 class="text-danger text-center">Eat the cupcakes</h2>
                 <hr >
                 <ul class="list-group ml-5">
                     {{#each cupcakes}}
                         {{#unless devoured}}
-                            {{> cupcakes/cupcake-block gulped=true}}
+                             {{> cupcakes/cupcake-block devoured=true}}
                         {{/unless}}
                     {{/each}}
                 </ul>
@@ -31,12 +31,13 @@
         {{!-- Cupcake eaten --}}
         <div class="col-lg-6">
             <div class="card text-white bg-success border-danger mb-3" >
-                <h2 class="text-white text-center">Yummy !!! De-li-cious Goodness</h2>
+                <h2 class="text-white text-center">Yummy !!! De-li-cious Goodness in my belly</h2>
                 <hr>
                 <ul class="list-group">
                     {{#each cupcakes}}
+                        
                         {{#if devoured}}
-                            {{> cupcakes/cupcake-block gulped=false}}
+                            {{> cupcakes/cupcake-block devoured=false}}
                         {{/if}}
                     {{/each}}
                 </ul>

@@ -4,7 +4,8 @@
     </div>
     <div class="col-md-3 col-3">
         <button class="change-devour btn-outline-danger" data-id="{{id}}" data-newdevour="{{devoured}}">
-            {{#if gulped}}Gulp It!{{else}}Reorder it!{{/if}}
+            {{!-- Based on the database coulmn name it checks the value --}}
+            {{#if devoured}}Gulp It!{{else}}Reorder it!{{/if}}
         </button>
     </div>
 </div>
