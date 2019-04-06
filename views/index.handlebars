@@ -9,7 +9,7 @@
                 <label for="newcupcake"></label>Assemble Cupcake</label>
                 <input type="text" id="newcupcake" name="cupcake_name">
                 {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
-                <button type="submit" class="btn btn-danger" id="addcupcake">ADD a CUPCAKE</button> 
+                <button type="submit" class="btn btn-danger" id="addcupcake">Add Cupcake</button> 
             </div>
         </form>
         {{!-- </panel> --}}
@@ -24,7 +24,7 @@
                 <ul class="list-group ml-5">
                     {{#each cupcakes}}
                         {{#unless devoured}}
-                            {{> cupcakes/cupcake-block devoured=true}}
+                            {{> cupcakes/cupcake-block gulped=true}}
                         {{/unless}}
                     {{/each}}
                 </ul>
@@ -36,10 +36,9 @@
                 <h2 class="text-white text-center">Yummy !!! De-li-cious Goodness</h2>
                 <hr>
                 <ul class="list-group">
-                    <br/>
                     {{#each cupcakes}}
                         {{#if devoured}}
-                            {{> cupcakes/cupcake-block devoured=false}}
+                            {{> cupcakes/cupcake-block gulped=false}}
                         {{/if}}
                     {{/each}}
                 </ul>

@@ -12,12 +12,12 @@ var cupcake ={
         });
       },
       insertOne: function(cols, vals, cb) {
-        orm.create("cupcakes", cols, vals, function(res) {
+        orm.insertOne("cupcakes", cols, vals, function(res) {
           cb(res);
         });
       },
-      update: function(colVals, cb) {
-        orm.update("cupcakes", colVals, function(res) {
+      update: function(objColVals, condition, cb) {
+        orm.update("cupcakes",objColVals, condition, function(res) {
           cb(res);
         });
       },
