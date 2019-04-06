@@ -23,6 +23,7 @@ function objToSql(ob) {
   // loop through the keys and push the key/value as a string int arr
   for (var key in ob) {
     var value = ob[key];
+    console.log("key value pair" + key , ob[key]); 
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
       // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
@@ -34,6 +35,9 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
+  // translate array of strings to a single comma-separated string
+  return arr.toString();
+}
 
 // Object for all our SQL statement functions.
 var orm = {
@@ -49,26 +53,17 @@ var orm = {
         });
       },
       insertOne: function(table, cols, colValue, cb) {
-        var queryString = "INSERT INTO " + table;
-
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(colValue.length);
-        queryString += ") ";
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
     
-        console.log("Inserting: " + queryString);
-    
-        connection.query(queryString, colValue, function(err, result) {
+        connection.query(queryString, [table, cols, colValue], function(err, result) {
           if (err) {
             throw err;
           }
-    
+          console.log("Data: " + result);
           cb(result);
         });
     },
-    updateOne: function(tableName, values, cb) {
+    updateOne: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
 
       queryString += " SET ";

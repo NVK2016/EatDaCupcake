@@ -36,12 +36,10 @@ router.post("/api/cupcakes", function(req, res) {
 
 //Update REcord 
 router.put("/api/cupcakes/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-
+  var condition = "id = " + req.params.id;
   console.log("condition", condition);
-  console.log("body", req.body);
 
-  cupcake.update({
+  cupcake.updateOne({
     devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {

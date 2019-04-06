@@ -14,7 +14,7 @@ var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 3000;
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/cupcake_controller.js");
+var routes = require("./controllers/cupcake_controller");
 
 //CONFIG 
 // --------------------------------------------------- 

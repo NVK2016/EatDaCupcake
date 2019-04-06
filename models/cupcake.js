@@ -16,8 +16,9 @@ var cupcake ={
           cb(res);
         });
       },
-      update: function(objColVals, condition, cb) {
-        orm.update("cupcakes",objColVals, condition, function(res) {
+      updateOne: function(objColVals, condition, cb) {
+        console.log("Model" + objColVals);
+        orm.updateOne("cupcakes",objColVals, condition, function(res) {
           cb(res);
         });
       },

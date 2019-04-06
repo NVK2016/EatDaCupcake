@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-7 col-7">
-        {{id}}. {{cupcake_name}}
+        {{id}}. {{cupcake_name}} 
     </div>
     <div class="col-md-3 col-3">
-        <button class="change-devour" data-id="{{this.id}}" data-newdevour="{{this.devoured}}">
+        <button class="change-devour btn-outline-danger" data-id="{{id}}" data-newdevour="{{devoured}}">
             {{#if gulped}}Gulp It!{{else}}Reorder it!{{/if}}
         </button>
     </div>
