@@ -1,0 +1,15 @@
+body {
+
+    font-family: 'Indie Flower', cursive;
+    font-size: 28px; 
+    
+}
+
+#pageHeader{
+    
+    background-image: url(../images/cupcakeicon.svg); 
+    /* opacity: 0.7;  */
+    font-weight: bolder; 
+    color:black;
+
+}

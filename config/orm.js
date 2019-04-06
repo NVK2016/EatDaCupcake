@@ -9,7 +9,7 @@ var orm = {
           if (err) {
             throw err;
           }
-          console.log(results);
+          console.log(result);
           cb(result);
         });
       },

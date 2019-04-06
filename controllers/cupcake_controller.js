@@ -15,7 +15,7 @@ var cupcake = require("../models/cupcake.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-    cupcake.all(function(data) {
+    cupcake.selectAll(function(data) {
       var hbsObject = {
         cupcakes: data
       };

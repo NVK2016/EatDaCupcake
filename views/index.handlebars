@@ -1,17 +1,15 @@
 <div class="container">
-    <div class="jumbotron">
-        <h1 id="color-override">De-li-cious-Cupcake!</h1>
-        <p id="color-override">Asemble the cupcakes, devour them to get a sugar rush.</p>
+    <div class="jumbotron" id="pageHeader">
+        <h1 class="text-center">De-li-cious-Cupcake!</h1>
+        <p class="text-center">You can't buy happiness, but you can devour cupcakes.</p>
         <br>
-        <h2 id="color-override">Make a Cupcake</h2>
         {{!-- <panel> --}}
         <form class="create-form">
             <div class="form-group">
-                <label for="newcupcake" id="color-override">Assemble a Cupcake:</label>
+                <label for="newcupcake"></label>Assemble Cupcake</label>
                 <input type="text" id="newcupcake" name="cupcake_name">
                 {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
-                <button type="submit" class="btn btn-success" id="addcupcake"><span
-                        class="fa fa-thumbs-up"></span>ADD a CUPCAKE</button>
+                <button type="submit" class="btn btn-danger" id="addcupcake">ADD a CUPCAKE</button> 
             </div>
         </form>
         {{!-- </panel> --}}
@@ -20,10 +18,10 @@
     <div class="row">
         {{!-- Cupcake not eaten --}}
         <div class="col-lg-6">
-            <div class="card">
-                <h2>Gobble Gooble till you wobble</h2>
-                <hr>
-                <ul class="list-group">
+            <div class="card text-white bg-warning border-danger mb-3" >
+                <h2 class="text-danger text-center">Gobble Gooble till you wobble</h2>
+                <hr >
+                <ul class="list-group ml-5">
                     {{#each cupcakes}}
                         {{#unless devoured}}
                             {{> cupcakes/cupcake-block devoured=true}}
@@ -34,13 +32,14 @@
         </div>
         {{!-- Cupcake eaten --}}
         <div class="col-lg-6">
-            <div class="card">
-                <h2>Yummy !!! De-li-cious Goodness</h2>
+            <div class="card text-white bg-success border-danger mb-3" >
+                <h2 class="text-white text-center">Yummy !!! De-li-cious Goodness</h2>
                 <hr>
                 <ul class="list-group">
+                    <br/>
                     {{#each cupcakes}}
                         {{#if devoured}}
-                            {{> cupcakes/cupcake-block devour=false}}
+                            {{> cupcakes/cupcake-block devoured=false}}
                         {{/if}}
                     {{/each}}
                 </ul>
